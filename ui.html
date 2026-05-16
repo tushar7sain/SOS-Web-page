@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS</title>
+    <link rel="stylesheet" href="ui.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="ui.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <div class="header">
+        <div class="logo">
+            <span class="pulse"></span>
+            <span class="text"> SafePulse </span>
+        </div>
+        <button class="Login-btn"><a href="">u</a></button>
+    </div>
+
+    <!-- Main-Title -->
+
+    <div class="title">
+        <h1 class="welcome-text"> Welcome to SafePulse </h1>
+    </div>
+    <!-- health containers -->
+    <h3 class="health-text"> Health Categories </h3>
+    <div class="health-containers">
+
+        <div class="health-container" data-health-key="activity">
+            <i class='bx bx-run'></i>
+            <h4> Activity </h4>
+            <div class="track"></div>
+        </div>
+
+        <div class="health-container" data-health-key="sleep">
+            <i class='bx bx-moon'></i>
+            <h4> Sleep </h4>
+            <div class="track"></div>
+        </div>
+
+        <div class="health-container" data-health-key="screenTime">
+            <i class='bx bx-mobile'></i>
+            <h4> Screen Time </h4>
+            <div class="track"></div>
+        </div>
+
+        <div class="health-container" data-health-key="mentalWellbeing">
+            <i class='bx bx-brain'></i>
+            <h4> Mental Wellbeing </h4>
+            <div class="track"></div>
+        </div>
+
+        <div class="health-container" data-health-key="steps">
+            <i class='bx bx-walk'></i>
+            <h4> Steps </h4>
+            <div class="track"></div>
+        </div>
+
+        <div class="health-container" data-health-key="heartRate">
+            <i class='bx bx-heart'></i>
+            <h4> Heart Rate </h4>
+            <div class="track"></div>
+        </div>
+    </div>
+
+    <!-- User info -->
+    <div class="user-info">
+        <h3>User Profile</h3>
+    </div>
+
+    <!-- User Info Section -->
+    <div class="user-section">
+
+        <!-- User Profile Card -->
+        <div class="user-card">
+            <img src="https://i.pravatar.cc/80" alt="user">
+            <div>
+                <h3>Username</h3>
+                <p>Age: 20 | Weight: 70kg</p>
+            </div>
+        </div>
+
+        <!-- Health Status Card -->
+        <div class="status-card">
+            <h3>Health Status</h3>
+            <p id="healthSummary">Tap a health category to view details.</p>
+
+            <div class="status-item">
+                <span>Heart Rate</span>
+                <span id="heartRateStatus" class="good">Normal</span>
+            </div>
+
+            <div class="status-item">
+                <span>Sleep</span>
+                <span id="sleepStatus" class="warning">Low</span>
+            </div>
+
+            <div class="status-item">
+                <span>Activity</span>
+                <span id="activityStatus" class="good">Active</span>
+            </div>
+
+            <div class="status-item">
+                <span>Stress</span>
+                <span id="stressStatus" class="danger">High</span>
+            </div>
+
+            <div class="stress-check">
+                <h4>How stressed are you right now?</h4>
+                <div class="stress-options">
+                    <button type="button" data-stress-level="fine">Fine</button>
+                    <button type="button" data-stress-level="stressed">Stressed</button>
+                    <button type="button" data-stress-level="very_stressed">Very stressed</button>
+                </div>
+                <p id="checkupMessage">Choose your stress level to run a quick checkup.</p>
+            </div>
+
+            <div id="checkupBox" class="checkup-box" style="display:none;">
+                <h4>Safety checkup active</h4>
+                <p>If you do not cancel, the failsafe alert will be sent.</p>
+                <strong id="checkupTimer">60</strong>
+                <button type="button" id="checkupCancelBtn">I'm okay, cancel</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- SOS-Title -->
+
+    <div class="sos-title">
+        <h3> Are you in emergency? </h3>
+        <p> Press the button below help will reach you soon </p>
+    </div>
+
+    <!-- SOS-button -->
+
+    <div class="sos-wrapper">
+        <div class="circle1">
+            <div class="circle2">
+                <button class="circle3-btn">SOS</button>
+            </div>
+        </div>
+    </div>
+    <div id="sosBox" style="display:none; text-align:center; margin-top:20px;">
+        <h2 id="timerText">30</h2>
+        <p>Sending alert in...</p>
+        <button onclick="cancelSOS()">Cancel</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,393 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+/* header */
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+}
+
+/* logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.pulse {
+    width: 14px;
+    height: 14px;
+    background: red;
+    border-radius: 50%;
+    position: relative;
+}
+
+.pulse::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: red;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+    opacity: 0.5;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+
+.text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.Login-btn{
+    width: 30px;
+    height: 30px;
+    padding: 5px 8px;
+    background: red;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.Login-btn img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Login-btn:hover {
+    box-shadow: 0 0 15px #0000007a;
+}
+
+/* title */
+.title{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-text{
+    font-size: 25px;
+}
+
+/* Health-text */
+
+.health-text{
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+/* health-Containers */
+
+.health-containers{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.health-container{
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    transition: 0.5s;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.health-container i {
+    font-size: 35px;
+    padding: 10px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+.health-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.health-container.selected {
+    border: 2px solid #ff4d4d;
+    transform: translateY(-5px);
+}
+
+.health-container h4 {
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.track {
+    color: #222;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.track-bar {
+    width: 100%;
+    height: 8px;
+    margin-top: 8px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #ffe1e1;
+}
+
+.track-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #ff4d4d, #ff9a9a);
+}
+
+/* User-info */
+.user-info h3 {
+    margin-top: 10px;
+    padding: 0 20px;
+}
+
+.user-section {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* User Card */
+.user-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.user-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+/* Status Card */
+.status-card {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.status-card h3 {
+    margin-bottom: 10px;
+}
+
+#healthSummary {
+    margin-bottom: 12px;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Status Items */
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+/* Status Colors */
+.good {
+    color: green;
+    font-weight: bold;
+}
+
+.warning {
+    color: orange;
+    font-weight: bold;
+}
+
+.danger {
+    color: red;
+    font-weight: bold;
+}
+
+.stress-check {
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.stress-check h4 {
+    margin-bottom: 10px;
+}
+
+.stress-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.stress-options button,
+.checkup-box button {
+    border: none;
+    border-radius: 14px;
+    padding: 8px 14px;
+    color: white;
+    background: #ff4d4d;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.stress-options button.selected {
+    background: #b00020;
+    box-shadow: 0 4px 12px rgba(176, 0, 32, 0.3);
+}
+
+#checkupMessage {
+    color: #555;
+    font-size: 14px;
+}
+
+.checkup-box {
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #ffb3b3;
+    border-radius: 15px;
+    background: #fff4f4;
+    text-align: center;
+}
+
+#checkupTimer {
+    display: block;
+    margin: 10px 0;
+    color: red;
+    font-size: 34px;
+}
+
+/* sos-title */
+.sos-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* SOS-btn */
+
+.sos-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+} 
+
+.circle1{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.circle1::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.2);
+    border-radius: 50%;
+    animation: pulse 1s 1;  
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1;}
+    100% { transform: scale(2.5); opacity: 0;}
+}
+
+.circle2{
+    width: 250px;
+    height: 250px;
+    display: flex;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+
+.circle2::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.3);
+    border-radius: 50%;
+    animation: pulse 1s 1;  
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1;}
+    100% { transform: scale(2.5); opacity: 0;}
+}
+
+.circle3-btn{
+    width: 200px;
+    height: 200px;
+    border-radius:100%;
+    border: none;
+    background-color: #ff4d4d;
+    cursor: pointer;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.301);
+    z-index: 1;
+}
+
+#timerText {
+    font-size: 50px;
+    font-weight: bold;
+    color: red;
+}
+
+#sosBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 999;
+    text-align: center;
+}
